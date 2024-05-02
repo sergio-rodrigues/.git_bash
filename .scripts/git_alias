@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# init .git_alias
+if [ -f "${LOCATION}/.git_alias/git_alias.sh" ]; then
+    alias git="${LOCATION}/.git_alias/git_alias.sh"
+fi

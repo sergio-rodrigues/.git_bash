@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#alias / software installation
+ALIAS_FILE="${LOCATION}/.alias"
+
+# Check if a file named .alias exists in the script directory
+if [ -f "${ALIAS_FILE}" ]; then
+    # If the .alias file exists, source it to set up aliases
+    . "${ALIAS_FILE}"
+# If the .alias file does not exist, check if software_install.sh exists
+elif [ -f "${LOCATION}/.git_software/software_install.sh" ]; then
+    # Set the variables for the software installation script
+    SOFTWARE_PATH="${LOCATION}/.software"
+    SOFTWARE_LIST_FILE="${LOCATION}/.git_software/.software_list"
+    # Source the software_install.sh script to install the software
+    . "${LOCATION}/.git_software/software_install.sh"
+fi

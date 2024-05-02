@@ -1,0 +1,6 @@
+*.env
+**/.software/**
+**/.software_list
+**/network_proxy.config
+**/.backup/**
+**/profiles/**

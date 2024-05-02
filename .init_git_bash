@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#.git_bash location
+LOCATION="${HOME}/.git_bash"
+
+#This code checks if the directory .scripts exists in the location specified by the LOCATION variable. 
+#If it does, it iterates over all files in that directory and sources them one by one. 
+# The if [ -f "$script" ]; then condition is used to ensure that only regular files are sourced, not directories or special files.
+if [ -d "${LOCATION}/.scripts" ]; then
+    for script in "${LOCATION}/.scripts"/*; do
+        if [ -f "$script" ]; then
+            echo "[.git_bash][init: $(basename $script)]"
+            . "$script"
+        fi
+    done
+fi
